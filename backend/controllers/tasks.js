@@ -24,4 +24,4 @@ module.exports = {
    getTask,
    updateTask,
    deleteTask
-}
+};
