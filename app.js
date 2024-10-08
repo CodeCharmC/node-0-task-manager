@@ -3,7 +3,7 @@ const app = express();
 const task = require("./backend/routes/tasks.js");
 
 //routes
-app.use("/api/v1", task); //the inisial route
+app.use("/api/v1/tasks", task); //the inisial route
 
 
 app.listen(3000, () => {
