@@ -13,11 +13,15 @@ const getTask = (req, res) => {
 };
 
 const updateTask = (req, res) => {
-   res.send(`<h1>Update Task</h1>`)
+   res.json({
+      id: req.params.id
+   }) 
 };
 
 const deleteTask = (req, res) => {
-   res.send(`<h1>Delete Task</h1>`)
+   res.json({
+      id: req.params.id
+   }) 
 };
 
 module.exports = {
