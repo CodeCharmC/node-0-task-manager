@@ -3,9 +3,11 @@ const router = express.Router();
 
 //controllers
 const {
-   getTask
+   getAllTask
 } = require("../controllers/tasks.js");
 
-router.get("/", getTask);
+
+//routes
+router.route("/").get(getAllTask);
 
 module.exports = router;
