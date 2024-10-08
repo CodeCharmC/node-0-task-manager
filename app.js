@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
+const task = require("./backend/routes/tasks.js");
 
 //routes
-app.get("/", (req, res) => {
-   res.send(`<h1>Task Manager App</h1>`)
-})
+app.use("/api/v1", task); //the inisial route
 
 
 app.listen(3000, () => {
