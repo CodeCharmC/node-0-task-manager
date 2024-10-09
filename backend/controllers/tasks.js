@@ -1,3 +1,5 @@
+const Task = require("../models/task.js");
+
 const getAllTask = (req, res) => {
    res.send(`<h1>Task Manager App</h1>`)
 };
