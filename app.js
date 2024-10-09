@@ -4,12 +4,14 @@ const task = require("./backend/routes/tasks.js");
 
 const connectDB = require("./db/connect.js");
 
+require("dotenv").config();
+
 //routes
 app.use("/api/v1/tasks", task); 
 
 const start = async () => {
    try {
-      await connectDB();
+      await connectDB(process.env.MONGO_URL);
       app.listen(3000, () => {
          console.log("Server is listening on port 3000...");
       });
