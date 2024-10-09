@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-const connectionString = "mongodb"; 
-
+// Connect to DB
 const connectDB = (url) => {
    return mongoose
-      .connect(connectionString, {
+      .connect(url, {
          useNewUrlParser: true,
          useCreateIndex: true,
          useFindAndModify: false,
