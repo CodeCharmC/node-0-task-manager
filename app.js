@@ -1,8 +1,8 @@
-require("./db/connect.js");
-
 const express = require("express");
 const app = express();
 const task = require("./backend/routes/tasks.js");
+
+const connectDB = require("./db/connect.js");
 
 //routes
 app.use("/api/v1/tasks", task); //the inisial route
