@@ -6,6 +6,9 @@ const connectDB = require("./db/connect.js");
 
 require("dotenv").config();
 
+//middleware
+app.use(express.json());
+
 //routes
 app.use("/api/v1/tasks", task); 
 
