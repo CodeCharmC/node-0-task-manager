@@ -1,16 +1,20 @@
 const express = require("express");
 const app = express();
 const task = require("./backend/routes/tasks.js");
+const notFound = require("./backend/middleware/not-found.js");
 
 const connectDB = require("./db/connect.js");
 
 require("dotenv").config();
 
 //middleware
+app.use(express.static("./frontend"));
 app.use(express.json());
 
 //routes
-app.use("/api/v1/tasks", task); 
+app.use("/api/v1/tasks", task);
+
+app.use(notFound);
 
 const start = async () => {
    try {
