@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const task = require("./backend/routes/tasks.js");
 const notFound = require("./backend/middleware/not-found.js");
+const errorHandler = require("./backend/middleware/error-handler.js");
 
 const connectDB = require("./db/connect.js");
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use("/api/v1/tasks", task);
 
 app.use(notFound);
+app.use(errorHandler);
 
 const start = async () => {
    try {
