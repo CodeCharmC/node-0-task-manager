@@ -18,11 +18,13 @@ app.use("/api/v1/tasks", task);
 app.use(notFound);
 app.use(errorHandler);
 
+const port = process.env.PORT || 3000;
+
 const start = async () => {
    try {
       await connectDB(process.env.MONGO_URL);
-      app.listen(3000, () => {
-         console.log("Server is listening on port 3000...");
+      app.listen(port, () => {
+         console.log(`Server is listening on ${port} ...`);
       });
    } catch (error) {
       console.log(error);
